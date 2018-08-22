@@ -88,3 +88,7 @@ function onListening() {
     : 'port ' + addr.port;
   debug('Listening on ' + bind);
 }
+
+var io = require('socket.io')(server);
+var webSocketServer = require('../my_modules/webSocketServer');
+webSocketServer.createWebSocketServer(io);
