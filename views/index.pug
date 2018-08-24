@@ -1,6 +1,9 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h2#top-header Welcome to リアルタイムチャット
+  div#chat-table
+  textarea#text-area(style='float: left;')
+  button#submit-button(style='float: left;') 投稿
+  p(style='clear:both;')
   script(src="/javascripts/index/bundle.js")

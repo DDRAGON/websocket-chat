@@ -1,8 +1,43 @@
+html {
+  height: 100%;
+}
+
 body {
-  padding: 50px;
+  padding: 0px 50px; // 上下 左右
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  height: 100%;
 }
 
 a {
   color: #00B7FF;
+}
+
+h2#top-header {
+
+}
+
+div#chat-table {
+  width: 90%;
+  height: 70%;
+  border: solid 5px #00FFFF;
+  padding: 5px;
+  overflow-y: scroll;
+}
+
+textarea#text-area {
+  width:calc(90% - 60px + 10px);
+  height: 30px;
+}
+
+button#submit-button {
+  width: 60px;
+  height: 35px;
+}
+
+span.chat-passed-time {
+  font-size: 50%;
+}
+
+span.chat-message {
+
 }

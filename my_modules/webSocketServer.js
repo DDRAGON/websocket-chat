@@ -1,12 +1,25 @@
+const messages = [];
 
 function createWebSocketServer(io) {
 
-   io.on('connection', function (socket) {
+   const rootIo = io.of('/');
+    rootIo.on('connection', function (socket) {
       console.log('connection came!');
 
-      socket.on('hello', function (data) {
-         console.log('hello came!');
-         socket.emit('hello', { message: 'thank you hello!' });
+      socket.emit('coming message', messages);
+
+
+      socket.on('message was submitted', function (data) {
+         console.log('message was submitted came!');
+
+         const time = new Date().getTime();
+         const newMessage = {
+             time: time,
+             message: data.message
+         };
+         messages.push(newMessage);
+
+          rootIo.emit('new message', newMessage);
       });
    });
 
